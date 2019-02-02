@@ -12,6 +12,7 @@ enum BeachGalleryModel {
         }
         
         struct Response {
+            let beachList: [Beach]
         }
         
         enum ViewModel {
@@ -25,6 +26,6 @@ enum BeachGalleryModel {
     }
     
     struct Beach {
-        let image: UIImage?
+        var image: UIImage?
     }
 }

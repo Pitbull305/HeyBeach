@@ -10,25 +10,36 @@ protocol BeachGalleryViewControllerIn {
 }
 
 protocol BeachGalleryViewControllerOut {
+    func fetchNextBeachListPage()
 }
 
 class BeachGalleryViewController: UIViewController {
     
     // MARK: - Outlets
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     // MARK: - Properties
+    var output: BeachGalleryViewControllerOut?
+    private let configurator = BeachGalleryConfigurator()
     private var beachList = [BeachGalleryModel.Beach]()
     
     // CollectionView
-    private let numberOfCellsPerRow: CGFloat = 2
+    private let numberOfCellsPerRow: CGFloat = 1
     private let minimumSpacingBetweenCellsInRow: CGFloat = 10
     private let rowEdgeInsets = UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
     
     // MARK: - UIViewController
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        configurator.configure(viewController: self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
+        activityIndicator.isHidden = false
+        output?.fetchNextBeachListPage()
     }
     
     private func setupCollectionView() {
@@ -72,6 +83,7 @@ extension BeachGalleryViewController: UICollectionViewDelegateFlowLayout {
 // MARK: - BeachGalleryViewControllerIn
 extension BeachGalleryViewController: BeachGalleryViewControllerIn {
     func displayBeachList(_ viewModel: BeachGalleryModel.Fetch.ViewModel.Success) {
+        activityIndicator.isHidden = true
         beachList = viewModel.beachList
         collectionView.reloadData()
     }

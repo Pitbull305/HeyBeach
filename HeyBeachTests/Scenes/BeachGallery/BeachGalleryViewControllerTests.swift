@@ -35,8 +35,17 @@ class BeachGalleryViewControllerTests: XCTestCase {
         return sut.collectionView.cellForItem(at: indexPath) as? BeachCell
     }
     
+    // MARK: - Spies
+    class OutputSpy: BeachGalleryViewControllerOut {
+        var fetchNextBeachListPageWasCalled = false
+        
+        func fetchNextBeachListPage() {
+            fetchNextBeachListPageWasCalled = true
+        }
+    }
+    
     // MARK: - Tests
-    func testCallingDisplayBeachList_displaysCorrectData() {
+    func testCallingDisplayBeachList_displaysCorrectData_andHidesActivityIndicator() {
         // Given
         let redPhoto = UIImage(named: "red.png", in: testBundle, compatibleWith: nil)!
         let greenPhoto = UIImage(named: "green.png", in: testBundle, compatibleWith: nil)!
@@ -50,9 +59,9 @@ class BeachGalleryViewControllerTests: XCTestCase {
         // When
         sut.displayBeachList(viewModel)
         
-        // Then
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.1))
+        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.1)) // Wait a little
         
+        // Then
         XCTAssertEqual(sut.collectionView.numberOfSections, 1)
         XCTAssertEqual(sut.collectionView.numberOfItems(inSection: 0), 3)
         
@@ -64,5 +73,20 @@ class BeachGalleryViewControllerTests: XCTestCase {
         
         let cell3 = getBeachCellForItemAtPosition(2)
         XCTAssertEqual(cell3?.imageView.image, bluePhoto)
+        
+        XCTAssertTrue(sut.activityIndicator.isHidden)
+    }
+    
+    func testWhenViewLoads_callsFetchBeachListInOutput_withCorrectData_andShowsActivityIndicator() {
+        // Given
+        let outputSpy = OutputSpy()
+        sut.output = outputSpy
+        
+        // When
+        sut.viewDidLoad()
+        
+        // Then
+        XCTAssertTrue(outputSpy.fetchNextBeachListPageWasCalled)
+        XCTAssertFalse(sut.activityIndicator.isHidden)
     }
 }

@@ -15,6 +15,13 @@
 		5082F5992205BC1100933D67 /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = 5082F5962205BC1100933D67 /* green.png */; };
 		5082F59A2205BC1100933D67 /* red.png in Resources */ = {isa = PBXBuildFile; fileRef = 5082F5972205BC1100933D67 /* red.png */; };
 		5082F59B2205BC1100933D67 /* blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 5082F5982205BC1100933D67 /* blue.png */; };
+		5082F59D2205CC1300933D67 /* BeachGalleryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5082F59C2205CC1300933D67 /* BeachGalleryInteractor.swift */; };
+		5082F59F2205CD5D00933D67 /* BeachWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5082F59E2205CD5D00933D67 /* BeachWorker.swift */; };
+		5082F5A22205CE4500933D67 /* RawBeach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5082F5A12205CE4500933D67 /* RawBeach.swift */; };
+		5082F5A42205D89700933D67 /* BeachGalleryInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5082F5A32205D89700933D67 /* BeachGalleryInteractorTests.swift */; };
+		5082F5A62205DF2500933D67 /* BeachGalleryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5082F5A52205DF2500933D67 /* BeachGalleryPresenter.swift */; };
+		5082F5A82205F17000933D67 /* BeachGalleryPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5082F5A72205F17000933D67 /* BeachGalleryPresenterTests.swift */; };
+		5082F5AA2205F37E00933D67 /* BeachGalleryConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5082F5A92205F37E00933D67 /* BeachGalleryConfigurator.swift */; };
 		509957012205934C00A01DA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509957002205934C00A01DA5 /* AppDelegate.swift */; };
 		509957062205934C00A01DA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 509957042205934C00A01DA5 /* Main.storyboard */; };
 		509957082205934D00A01DA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 509957072205934D00A01DA5 /* Assets.xcassets */; };
@@ -48,6 +55,13 @@
 		5082F5962205BC1100933D67 /* green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green.png; sourceTree = "<group>"; };
 		5082F5972205BC1100933D67 /* red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red.png; sourceTree = "<group>"; };
 		5082F5982205BC1100933D67 /* blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue.png; sourceTree = "<group>"; };
+		5082F59C2205CC1300933D67 /* BeachGalleryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeachGalleryInteractor.swift; sourceTree = "<group>"; };
+		5082F59E2205CD5D00933D67 /* BeachWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeachWorker.swift; sourceTree = "<group>"; };
+		5082F5A12205CE4500933D67 /* RawBeach.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawBeach.swift; sourceTree = "<group>"; };
+		5082F5A32205D89700933D67 /* BeachGalleryInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeachGalleryInteractorTests.swift; sourceTree = "<group>"; };
+		5082F5A52205DF2500933D67 /* BeachGalleryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeachGalleryPresenter.swift; sourceTree = "<group>"; };
+		5082F5A72205F17000933D67 /* BeachGalleryPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeachGalleryPresenterTests.swift; sourceTree = "<group>"; };
+		5082F5A92205F37E00933D67 /* BeachGalleryConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeachGalleryConfigurator.swift; sourceTree = "<group>"; };
 		509956FD2205934C00A01DA5 /* HeyBeach.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeyBeach.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		509957002205934C00A01DA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		509957052205934C00A01DA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -89,8 +103,11 @@
 		5082F5832205ACDC00933D67 /* BeachGallery */ = {
 			isa = PBXGroup;
 			children = (
+				5082F5A92205F37E00933D67 /* BeachGalleryConfigurator.swift */,
 				5082F5892205AD9E00933D67 /* BeachGalleryModel.swift */,
 				5082F5842205ACF200933D67 /* BeachGalleryViewController.swift */,
+				5082F59C2205CC1300933D67 /* BeachGalleryInteractor.swift */,
+				5082F5A52205DF2500933D67 /* BeachGalleryPresenter.swift */,
 			);
 			path = BeachGallery;
 			sourceTree = "<group>";
@@ -98,6 +115,8 @@
 		5082F5862205AD2E00933D67 /* Worker */ = {
 			isa = PBXGroup;
 			children = (
+				5082F59E2205CD5D00933D67 /* BeachWorker.swift */,
+				5082F5A02205CDEE00933D67 /* ApiModels */,
 			);
 			path = Worker;
 			sourceTree = "<group>";
@@ -123,6 +142,8 @@
 			isa = PBXGroup;
 			children = (
 				5082F5922205BB5800933D67 /* BeachGalleryViewControllerTests.swift */,
+				5082F5A32205D89700933D67 /* BeachGalleryInteractorTests.swift */,
+				5082F5A72205F17000933D67 /* BeachGalleryPresenterTests.swift */,
 			);
 			path = BeachGallery;
 			sourceTree = "<group>";
@@ -143,6 +164,14 @@
 				5082F5982205BC1100933D67 /* blue.png */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		5082F5A02205CDEE00933D67 /* ApiModels */ = {
+			isa = PBXGroup;
+			children = (
+				5082F5A12205CE4500933D67 /* RawBeach.swift */,
+			);
+			path = ApiModels;
 			sourceTree = "<group>";
 		};
 		509956F42205934B00A01DA5 = {
@@ -367,10 +396,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5082F59D2205CC1300933D67 /* BeachGalleryInteractor.swift in Sources */,
+				5082F5A62205DF2500933D67 /* BeachGalleryPresenter.swift in Sources */,
 				509957012205934C00A01DA5 /* AppDelegate.swift in Sources */,
+				5082F5AA2205F37E00933D67 /* BeachGalleryConfigurator.swift in Sources */,
 				5082F58D2205B91F00933D67 /* BeachCell.swift in Sources */,
+				5082F59F2205CD5D00933D67 /* BeachWorker.swift in Sources */,
 				5082F5852205ACF200933D67 /* BeachGalleryViewController.swift in Sources */,
 				5082F58A2205AD9F00933D67 /* BeachGalleryModel.swift in Sources */,
+				5082F5A22205CE4500933D67 /* RawBeach.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +413,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5082F5932205BB5800933D67 /* BeachGalleryViewControllerTests.swift in Sources */,
+				5082F5A42205D89700933D67 /* BeachGalleryInteractorTests.swift in Sources */,
+				5082F5A82205F17000933D67 /* BeachGalleryPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -555,7 +591,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.pitbull305.HeyBeach;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -573,7 +609,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.pitbull305.HeyBeach;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
