@@ -7,11 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5082F5852205ACF200933D67 /* BeachGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5082F5842205ACF200933D67 /* BeachGalleryViewController.swift */; };
+		5082F58A2205AD9F00933D67 /* BeachGalleryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5082F5892205AD9E00933D67 /* BeachGalleryModel.swift */; };
+		5082F58D2205B91F00933D67 /* BeachCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5082F58C2205B91F00933D67 /* BeachCell.swift */; };
+		5082F58F2205B92C00933D67 /* BeachCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5082F58E2205B92C00933D67 /* BeachCell.xib */; };
+		5082F5932205BB5800933D67 /* BeachGalleryViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5082F5922205BB5800933D67 /* BeachGalleryViewControllerTests.swift */; };
+		5082F5992205BC1100933D67 /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = 5082F5962205BC1100933D67 /* green.png */; };
+		5082F59A2205BC1100933D67 /* red.png in Resources */ = {isa = PBXBuildFile; fileRef = 5082F5972205BC1100933D67 /* red.png */; };
+		5082F59B2205BC1100933D67 /* blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 5082F5982205BC1100933D67 /* blue.png */; };
 		509957012205934C00A01DA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509957002205934C00A01DA5 /* AppDelegate.swift */; };
 		509957062205934C00A01DA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 509957042205934C00A01DA5 /* Main.storyboard */; };
 		509957082205934D00A01DA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 509957072205934D00A01DA5 /* Assets.xcassets */; };
 		5099570B2205934D00A01DA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 509957092205934D00A01DA5 /* LaunchScreen.storyboard */; };
-		509957162205934D00A01DA5 /* HeyBeachTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509957152205934D00A01DA5 /* HeyBeachTests.swift */; };
 		509957212205934D00A01DA5 /* HeyBeachUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509957202205934D00A01DA5 /* HeyBeachUITests.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +40,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5082F5842205ACF200933D67 /* BeachGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeachGalleryViewController.swift; sourceTree = "<group>"; };
+		5082F5892205AD9E00933D67 /* BeachGalleryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeachGalleryModel.swift; sourceTree = "<group>"; };
+		5082F58C2205B91F00933D67 /* BeachCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeachCell.swift; sourceTree = "<group>"; };
+		5082F58E2205B92C00933D67 /* BeachCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BeachCell.xib; sourceTree = "<group>"; };
+		5082F5922205BB5800933D67 /* BeachGalleryViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeachGalleryViewControllerTests.swift; sourceTree = "<group>"; };
+		5082F5962205BC1100933D67 /* green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green.png; sourceTree = "<group>"; };
+		5082F5972205BC1100933D67 /* red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red.png; sourceTree = "<group>"; };
+		5082F5982205BC1100933D67 /* blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue.png; sourceTree = "<group>"; };
 		509956FD2205934C00A01DA5 /* HeyBeach.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeyBeach.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		509957002205934C00A01DA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		509957052205934C00A01DA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -40,7 +55,6 @@
 		5099570A2205934D00A01DA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5099570C2205934D00A01DA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		509957112205934D00A01DA5 /* HeyBeachTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeyBeachTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		509957152205934D00A01DA5 /* HeyBeachTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeyBeachTests.swift; sourceTree = "<group>"; };
 		509957172205934D00A01DA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5099571C2205934D00A01DA5 /* HeyBeachUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeyBeachUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		509957202205934D00A01DA5 /* HeyBeachUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeyBeachUITests.swift; sourceTree = "<group>"; };
@@ -72,6 +86,65 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5082F5832205ACDC00933D67 /* BeachGallery */ = {
+			isa = PBXGroup;
+			children = (
+				5082F5892205AD9E00933D67 /* BeachGalleryModel.swift */,
+				5082F5842205ACF200933D67 /* BeachGalleryViewController.swift */,
+			);
+			path = BeachGallery;
+			sourceTree = "<group>";
+		};
+		5082F5862205AD2E00933D67 /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Worker;
+			sourceTree = "<group>";
+		};
+		5082F58B2205B90900933D67 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5082F58C2205B91F00933D67 /* BeachCell.swift */,
+				5082F58E2205B92C00933D67 /* BeachCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		5082F5902205BA9E00933D67 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				5082F5912205BAA300933D67 /* BeachGallery */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		5082F5912205BAA300933D67 /* BeachGallery */ = {
+			isa = PBXGroup;
+			children = (
+				5082F5922205BB5800933D67 /* BeachGalleryViewControllerTests.swift */,
+			);
+			path = BeachGallery;
+			sourceTree = "<group>";
+		};
+		5082F5942205BBF200933D67 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				5082F5952205BC0000933D67 /* Images */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		5082F5952205BC0000933D67 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				5082F5972205BC1100933D67 /* red.png */,
+				5082F5962205BC1100933D67 /* green.png */,
+				5082F5982205BC1100933D67 /* blue.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		509956F42205934B00A01DA5 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +172,7 @@
 				509957002205934C00A01DA5 /* AppDelegate.swift */,
 				509957312205985100A01DA5 /* Views */,
 				509957302205983F00A01DA5 /* Scenes */,
+				5082F5862205AD2E00933D67 /* Worker */,
 				5099572F2205982C00A01DA5 /* Resources */,
 			);
 			path = HeyBeach;
@@ -108,7 +182,8 @@
 			isa = PBXGroup;
 			children = (
 				509957172205934D00A01DA5 /* Info.plist */,
-				509957152205934D00A01DA5 /* HeyBeachTests.swift */,
+				5082F5942205BBF200933D67 /* Mocks */,
+				5082F5902205BA9E00933D67 /* Scenes */,
 			);
 			path = HeyBeachTests;
 			sourceTree = "<group>";
@@ -142,6 +217,7 @@
 		509957302205983F00A01DA5 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				5082F5832205ACDC00933D67 /* BeachGallery */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -150,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				5099572E220597E600A01DA5 /* Storyboards */,
+				5082F58B2205B90900933D67 /* Cells */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -225,6 +302,7 @@
 					};
 					509957102205934D00A01DA5 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 						TestTargetID = 509956FC2205934B00A01DA5;
 					};
 					5099571B2205934D00A01DA5 = {
@@ -259,6 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5099570B2205934D00A01DA5 /* LaunchScreen.storyboard in Resources */,
+				5082F58F2205B92C00933D67 /* BeachCell.xib in Resources */,
 				509957082205934D00A01DA5 /* Assets.xcassets in Resources */,
 				509957062205934C00A01DA5 /* Main.storyboard in Resources */,
 			);
@@ -268,6 +347,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5082F5992205BC1100933D67 /* green.png in Resources */,
+				5082F59A2205BC1100933D67 /* red.png in Resources */,
+				5082F59B2205BC1100933D67 /* blue.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +368,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				509957012205934C00A01DA5 /* AppDelegate.swift in Sources */,
+				5082F58D2205B91F00933D67 /* BeachCell.swift in Sources */,
+				5082F5852205ACF200933D67 /* BeachGalleryViewController.swift in Sources */,
+				5082F58A2205AD9F00933D67 /* BeachGalleryModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,7 +378,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				509957162205934D00A01DA5 /* HeyBeachTests.swift in Sources */,
+				5082F5932205BB5800933D67 /* BeachGalleryViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,6 +582,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4BSJH4LP2Q;
 				INFOPLIST_FILE = HeyBeachTests/Info.plist;
@@ -507,6 +593,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pitbull305.HeyBeachTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HeyBeach.app/HeyBeach";
@@ -518,6 +605,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4BSJH4LP2Q;
 				INFOPLIST_FILE = HeyBeachTests/Info.plist;
