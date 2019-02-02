@@ -38,13 +38,18 @@ class BeachGalleryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
-        activityIndicator.isHidden = false
-        output?.fetchNextBeachListPage()
+        loadNextPage()
     }
     
+    // MARK: - Methods
     private func setupCollectionView() {
         collectionView.register(UINib(nibName: "BeachCell", bundle: nil), forCellWithReuseIdentifier: "BeachCell")
         collectionView.allowsSelection = false
+    }
+    
+    private func loadNextPage() {
+        activityIndicator.isHidden = false
+        output?.fetchNextBeachListPage()
     }
 }
 
@@ -77,6 +82,15 @@ extension BeachGalleryViewController: UICollectionViewDelegateFlowLayout {
         let cellWidth = (collectionViewWidth - rowEdgeInsets.left - rowEdgeInsets.right - minimumSpacingBetweenCellsInRow * (numberOfCellsPerRow - 1)) / numberOfCellsPerRow
         let cellHeight = cellWidth * 0.8
         return CGSize(width: cellWidth, height: cellHeight)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let height = scrollView.frame.size.height
+        let contentYoffset = scrollView.contentOffset.y
+        let distanceFromBottom = scrollView.contentSize.height - contentYoffset
+        if distanceFromBottom < height {
+            loadNextPage()
+        }
     }
 }
 
