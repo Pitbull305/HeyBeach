@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5060F8A222064C7100FA10A5 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5060F8A122064C7100FA10A5 /* AuthenticationViewController.swift */; };
 		5082F5852205ACF200933D67 /* BeachGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5082F5842205ACF200933D67 /* BeachGalleryViewController.swift */; };
 		5082F58A2205AD9F00933D67 /* BeachGalleryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5082F5892205AD9E00933D67 /* BeachGalleryModel.swift */; };
 		5082F58D2205B91F00933D67 /* BeachCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5082F58C2205B91F00933D67 /* BeachCell.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5060F8A122064C7100FA10A5 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		5082F5842205ACF200933D67 /* BeachGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeachGalleryViewController.swift; sourceTree = "<group>"; };
 		5082F5892205AD9E00933D67 /* BeachGalleryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeachGalleryModel.swift; sourceTree = "<group>"; };
 		5082F58C2205B91F00933D67 /* BeachCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeachCell.swift; sourceTree = "<group>"; };
@@ -100,6 +102,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5060F8A022064C4100FA10A5 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				5060F8A122064C7100FA10A5 /* AuthenticationViewController.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
 		5082F5832205ACDC00933D67 /* BeachGallery */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,6 +256,7 @@
 		509957302205983F00A01DA5 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				5060F8A022064C4100FA10A5 /* Authentication */,
 				5082F5832205ACDC00933D67 /* BeachGallery */,
 			);
 			path = Scenes;
@@ -398,6 +409,7 @@
 			files = (
 				5082F59D2205CC1300933D67 /* BeachGalleryInteractor.swift in Sources */,
 				5082F5A62205DF2500933D67 /* BeachGalleryPresenter.swift in Sources */,
+				5060F8A222064C7100FA10A5 /* AuthenticationViewController.swift in Sources */,
 				509957012205934C00A01DA5 /* AppDelegate.swift in Sources */,
 				5082F5AA2205F37E00933D67 /* BeachGalleryConfigurator.swift in Sources */,
 				5082F58D2205B91F00933D67 /* BeachCell.swift in Sources */,
