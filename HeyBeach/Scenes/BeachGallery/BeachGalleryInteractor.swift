@@ -23,13 +23,11 @@ class BeachGalleryInteractor {
     // Infinite scrolling
     private var isLoadingBeachList = false
     private var currentBeachListPage = 0
-    private var totalBeachListCount = 0
     private var oldBeachList = [BeachGalleryModel.Beach]()
     
     // MARK: - Methods
     private func handleFetchNextBeachListPageResponse(_ rawBeachList: [RawBeach], _ success: Bool) {
         if success {
-            totalBeachListCount = rawBeachList.count
             createPresenterResponse(rawBeachList, completionHandler: {
                 (response: BeachGalleryModel.Fetch.Response) in
                 self.isLoadingBeachList = false
