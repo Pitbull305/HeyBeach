@@ -51,7 +51,7 @@ class BeachGalleryInteractor {
             
             // Get image
             dispatchGroup.enter()
-            beachWorker?.fetchBeachImage(name: rawBeach.name, completionHandler: {
+            beachWorker?.fetchBeachImage(id: rawBeach._id, name: rawBeach.name, completionHandler: {
                 (image: UIImage?) in
                 newBeachList[index].image = image
                 dispatchGroup.leave()

@@ -25,7 +25,7 @@ class BeachWorker {
         
         URLSession.shared.dataTask(with: request, completionHandler: {
             (data, response, error) in
-            if let data = data, error == nil {
+            if error == nil, let data = data {
                 do {
                     let decoder = JSONDecoder()
                     let rawBeachList = try decoder.decode([RawBeach].self, from: data)
@@ -41,7 +41,7 @@ class BeachWorker {
         }).resume()
     }
     
-    func fetchBeachImage(name: String, completionHandler: @escaping(_ image: UIImage?) -> Void) {
+    func fetchBeachImage(id: String, name: String, completionHandler: @escaping(_ image: UIImage?) -> Void) {
         let urlString = "\(endpoint)/images/\(name)"
         guard let url = URL(string: urlString) else {
             completionHandler(nil)
@@ -52,15 +52,20 @@ class BeachWorker {
         request.httpMethod = "GET"
         request.cachePolicy = .reloadIgnoringLocalCacheData
         
-        URLSession.shared.dataTask(with: request, completionHandler: {
-            (data, response, error) in
-            if let data = data, error == nil {
-                let icon = UIImage(data: data)
-                completionHandler(icon)
-            }
-            else {
-                completionHandler(nil)
-            }
-        }).resume()
+        if let image = CacheManager.getImageFromBeachImagesCache(id) {
+            completionHandler(image)
+        }
+        else {
+            URLSession.shared.dataTask(with: request, completionHandler: {
+                (data, response, error) in
+                if error == nil, let data = data, let image = UIImage(data: data) {
+                    CacheManager.storeImageInBeachImagesCache(id, image)
+                    completionHandler(image)
+                }
+                else {
+                    completionHandler(nil)
+                }
+            }).resume()
+        }
     }
 }
