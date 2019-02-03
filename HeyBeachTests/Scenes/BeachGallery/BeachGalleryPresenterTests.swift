@@ -56,9 +56,9 @@ class BeachGalleryPresenterTests: XCTestCase {
         let redPhoto = UIImage(named: "red.png", in: testBundle, compatibleWith: nil)!
         let greenPhoto = UIImage(named: "green.png", in: testBundle, compatibleWith: nil)!
         let bluePhoto = UIImage(named: "blue.png", in: testBundle, compatibleWith: nil)!
-        let beach1 = BeachGalleryModel.Beach(image: redPhoto)
-        let beach2 = BeachGalleryModel.Beach(image: greenPhoto)
-        let beach3 = BeachGalleryModel.Beach(image: bluePhoto)
+        let beach1 = BeachGalleryModel.Beach(image: redPhoto, title: "Red")
+        let beach2 = BeachGalleryModel.Beach(image: greenPhoto, title: "Green")
+        let beach3 = BeachGalleryModel.Beach(image: bluePhoto, title: "Blue")
         let beachList = [beach1, beach2, beach3]
         let response = BeachGalleryModel.Fetch.Response(beachList: beachList)
         
@@ -70,8 +70,11 @@ class BeachGalleryPresenterTests: XCTestCase {
         
         let viewModel = outputSpy.displayBeachListViewModel
         XCTAssertEqual(viewModel?.beachList[0].image, UIImage(named: "red.png", in: testBundle, compatibleWith: nil)!)
+        XCTAssertEqual(viewModel?.beachList[0].title, "Red")
         XCTAssertEqual(viewModel?.beachList[1].image, UIImage(named: "green.png", in: testBundle, compatibleWith: nil)!)
+        XCTAssertEqual(viewModel?.beachList[1].title, "Green")
         XCTAssertEqual(viewModel?.beachList[2].image, UIImage(named: "blue.png", in: testBundle, compatibleWith: nil)!)
+        XCTAssertEqual(viewModel?.beachList[2].title, "Blue")
     }
     
     func testCallingPresentFetchError_callsDisplayErrorMessage_withCorrectData() {

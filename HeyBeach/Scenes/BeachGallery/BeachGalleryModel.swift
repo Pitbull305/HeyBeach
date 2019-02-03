@@ -28,5 +28,6 @@ enum BeachGalleryModel {
     
     struct Beach {
         var image: UIImage?
+        let title: String
     }
 }

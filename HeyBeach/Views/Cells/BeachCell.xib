@@ -13,25 +13,37 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BeachCell" customModule="HeyBeach" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qzC-ND-4um">
-                    <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                    <rect key="frame" x="0.0" y="0.0" width="200" height="151"/>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqa-eu-Zke">
+                    <rect key="frame" x="16" y="167" width="168" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="qzC-ND-4um" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="3h4-pE-gQc"/>
                 <constraint firstAttribute="trailing" secondItem="qzC-ND-4um" secondAttribute="trailing" id="D8P-sZ-pyP"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="gqa-eu-Zke" secondAttribute="trailing" constant="16" id="PZn-gM-2HI"/>
                 <constraint firstItem="qzC-ND-4um" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="PlQ-p5-1vZ"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="qzC-ND-4um" secondAttribute="bottom" id="biO-ic-Czu"/>
+                <constraint firstItem="gqa-eu-Zke" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="Z7B-eI-Mi8"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="gqa-eu-Zke" secondAttribute="bottom" constant="16" id="bXs-Rf-Gpc"/>
+                <constraint firstItem="gqa-eu-Zke" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="f7a-SM-nrn"/>
+                <constraint firstItem="gqa-eu-Zke" firstAttribute="top" secondItem="qzC-ND-4um" secondAttribute="bottom" constant="16" id="g8D-LV-aKQ"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="imageView" destination="qzC-ND-4um" id="mKG-hz-UO4"/>
+                <outlet property="label_title" destination="gqa-eu-Zke" id="knn-xV-3w6"/>
             </connections>
+            <point key="canvasLocation" x="137.59999999999999" y="153.82308845577214"/>
         </view>
     </objects>
 </document>

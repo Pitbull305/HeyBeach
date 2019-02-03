@@ -50,9 +50,9 @@ class BeachGalleryViewControllerTests: XCTestCase {
         let redPhoto = UIImage(named: "red.png", in: testBundle, compatibleWith: nil)!
         let greenPhoto = UIImage(named: "green.png", in: testBundle, compatibleWith: nil)!
         let bluePhoto = UIImage(named: "blue.png", in: testBundle, compatibleWith: nil)!
-        let beach1 = BeachGalleryModel.Beach(image: redPhoto)
-        let beach2 = BeachGalleryModel.Beach(image: greenPhoto)
-        let beach3 = BeachGalleryModel.Beach(image: bluePhoto)
+        let beach1 = BeachGalleryModel.Beach(image: redPhoto, title: "Red")
+        let beach2 = BeachGalleryModel.Beach(image: greenPhoto, title: "Green")
+        let beach3 = BeachGalleryModel.Beach(image: bluePhoto, title: "Blue")
         let beachList = [beach1, beach2, beach3]
         let viewModel = BeachGalleryModel.Fetch.ViewModel.Success(beachList: beachList)
         
@@ -67,12 +67,15 @@ class BeachGalleryViewControllerTests: XCTestCase {
         
         let cell1 = getBeachCellForItemAtPosition(0)
         XCTAssertEqual(cell1?.imageView.image, redPhoto)
+        XCTAssertEqual(cell1?.label_title.text, "Red")
         
         let cell2 = getBeachCellForItemAtPosition(1)
         XCTAssertEqual(cell2?.imageView.image, greenPhoto)
+        XCTAssertEqual(cell2?.label_title.text, "Green")
         
         let cell3 = getBeachCellForItemAtPosition(2)
         XCTAssertEqual(cell3?.imageView.image, bluePhoto)
+        XCTAssertEqual(cell3?.label_title.text, "Blue")
         
         XCTAssertTrue(sut.activityIndicator.isHidden)
     }

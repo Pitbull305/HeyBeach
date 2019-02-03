@@ -48,7 +48,7 @@ class BeachGalleryInteractor {
         var newBeachList = [BeachGalleryModel.Beach]()
         
         for (index, rawBeach) in rawBeachList.enumerated() {
-            let beach = BeachGalleryModel.Beach()
+            let beach = BeachGalleryModel.Beach(image: nil, title: rawBeach.name)
             newBeachList.append(beach)
             
             // Get image
