@@ -33,6 +33,7 @@
 		50C64B6F2206F464005B711E /* UserWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C64B6E2206F464005B711E /* UserWorker.swift */; };
 		50C64B752206FEB4005B711E /* AuthenticationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C64B742206FEB4005B711E /* AuthenticationModel.swift */; };
 		50C64B7722070310005B711E /* AuthenticationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C64B7622070310005B711E /* AuthenticationConfigurator.swift */; };
+		50C64B7A2207168F005B711E /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C64B792207168F005B711E /* UserDefaultsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		50C64B6E2206F464005B711E /* UserWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserWorker.swift; sourceTree = "<group>"; };
 		50C64B742206FEB4005B711E /* AuthenticationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationModel.swift; sourceTree = "<group>"; };
 		50C64B7622070310005B711E /* AuthenticationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationConfigurator.swift; sourceTree = "<group>"; };
+		50C64B792207168F005B711E /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +226,7 @@
 			children = (
 				5099570C2205934D00A01DA5 /* Info.plist */,
 				509957002205934C00A01DA5 /* AppDelegate.swift */,
+				50C64B7B2207171C005B711E /* UserDefaults */,
 				509957312205985100A01DA5 /* Views */,
 				509957302205983F00A01DA5 /* Scenes */,
 				5082F5862205AD2E00933D67 /* Worker */,
@@ -284,6 +287,14 @@
 				5082F58B2205B90900933D67 /* Cells */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		50C64B7B2207171C005B711E /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				50C64B792207168F005B711E /* UserDefaultsManager.swift */,
+			);
+			path = UserDefaults;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -426,6 +437,7 @@
 				5082F5A62205DF2500933D67 /* BeachGalleryPresenter.swift in Sources */,
 				5060F8A222064C7100FA10A5 /* AuthenticationViewController.swift in Sources */,
 				509957012205934C00A01DA5 /* AppDelegate.swift in Sources */,
+				50C64B7A2207168F005B711E /* UserDefaultsManager.swift in Sources */,
 				50C64B6F2206F464005B711E /* UserWorker.swift in Sources */,
 				50C64B752206FEB4005B711E /* AuthenticationModel.swift in Sources */,
 				5082F5AA2205F37E00933D67 /* BeachGalleryConfigurator.swift in Sources */,

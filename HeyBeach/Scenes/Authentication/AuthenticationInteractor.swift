@@ -19,13 +19,12 @@ class AuthenticationInteractor {
     // MARK: - Properties
     var output: AuthenticationInteractorOut?
     var userWorker: UserWorker?
-    private var token = ""
     
     // MARK: - Methods
     private func handleSignUpResponse(_ token: String?) {
         DispatchQueue.main.async {
             if let token = token {
-                self.token = token
+                UserDefaultsManager.storeToken(token)
                 self.output?.presentSignUpSuccess()
             }
             else {
