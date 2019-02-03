@@ -7,10 +7,12 @@ import Foundation
 
 protocol BeachGalleryPresenterIn {
     func presentBeachList(_ response: BeachGalleryModel.Fetch.Response)
+    func presentFetchError()
 }
 
 protocol BeachGalleryPresenterOut: class {
     func displayBeachList(_ viewModel: BeachGalleryModel.Fetch.ViewModel.Success)
+    func displayErrorMessage(_ viewModel: BeachGalleryModel.Fetch.ViewModel.Failure)
 }
 
 class BeachGalleryPresenter {
@@ -19,10 +21,15 @@ class BeachGalleryPresenter {
     weak var output: BeachGalleryPresenterOut?
 }
 
-// MARK: - WeatherPresenterIn
+// MARK: - BeachGalleryPresenterIn
 extension BeachGalleryPresenter: BeachGalleryPresenterIn {
     func presentBeachList(_ response: BeachGalleryModel.Fetch.Response) {
         let viewModel = BeachGalleryModel.Fetch.ViewModel.Success(beachList: response.beachList)
         output?.displayBeachList(viewModel)
+    }
+    
+    func presentFetchError() {
+        let viewModel = BeachGalleryModel.Fetch.ViewModel.Failure(message: "An error has occurred, please try again later.")
+        output?.displayErrorMessage(viewModel)
     }
 }

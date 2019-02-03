@@ -33,9 +33,17 @@ class BeachGalleryPresenterTests: XCTestCase {
         var displayBeachListWasCalled = false
         var displayBeachListViewModel: BeachGalleryModel.Fetch.ViewModel.Success?
         
+        var displayErrorMessageWasCalled = false
+        var displayErrorMessageViewModel: BeachGalleryModel.Fetch.ViewModel.Failure?
+        
         func displayBeachList(_ viewModel: BeachGalleryModel.Fetch.ViewModel.Success) {
             displayBeachListWasCalled = true
             displayBeachListViewModel = viewModel
+        }
+        
+        func displayErrorMessage(_ viewModel: BeachGalleryModel.Fetch.ViewModel.Failure) {
+            displayErrorMessageWasCalled = true
+            displayErrorMessageViewModel = viewModel
         }
     }
     
@@ -64,5 +72,20 @@ class BeachGalleryPresenterTests: XCTestCase {
         XCTAssertEqual(viewModel?.beachList[0].image, UIImage(named: "red.png", in: testBundle, compatibleWith: nil)!)
         XCTAssertEqual(viewModel?.beachList[1].image, UIImage(named: "green.png", in: testBundle, compatibleWith: nil)!)
         XCTAssertEqual(viewModel?.beachList[2].image, UIImage(named: "blue.png", in: testBundle, compatibleWith: nil)!)
+    }
+    
+    func testCallingPresentFetchError_callsDisplayErrorMessage_withCorrectData() {
+        // Given
+        let outputSpy = OutputSpy()
+        sut.output = outputSpy
+        
+        // When
+        sut.presentFetchError()
+        
+        // Then
+        XCTAssertTrue(outputSpy.displayErrorMessageWasCalled)
+        
+        let viewModel = outputSpy.displayErrorMessageViewModel
+        XCTAssertEqual(viewModel?.message, "An error has occurred, please try again later.")
     }
 }

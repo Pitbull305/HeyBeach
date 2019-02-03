@@ -7,6 +7,7 @@ import UIKit
 
 protocol BeachGalleryViewControllerIn {
     func displayBeachList(_ viewModel: BeachGalleryModel.Fetch.ViewModel.Success)
+    func displayErrorMessage(_ viewModel: BeachGalleryModel.Fetch.ViewModel.Failure)
 }
 
 protocol BeachGalleryViewControllerOut {
@@ -100,5 +101,14 @@ extension BeachGalleryViewController: BeachGalleryViewControllerIn {
         activityIndicator.isHidden = true
         beachList = viewModel.beachList
         collectionView.reloadData()
+    }
+    
+    func displayErrorMessage(_ viewModel: BeachGalleryModel.Fetch.ViewModel.Failure) {
+        activityIndicator.isHidden = true
+        let alertController = UIAlertController(title: "", message: viewModel.message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) in
+        }
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
     }
 }

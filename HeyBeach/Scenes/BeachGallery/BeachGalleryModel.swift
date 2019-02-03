@@ -21,6 +21,7 @@ enum BeachGalleryModel {
             }
             
             struct Failure {
+                let message: String
             }
         }
     }

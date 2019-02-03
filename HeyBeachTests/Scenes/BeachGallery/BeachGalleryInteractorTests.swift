@@ -33,9 +33,15 @@ class BeachGalleryInteractorTests: XCTestCase {
         var presentBeachListWasCalled = false
         var presentBeachListResponse: BeachGalleryModel.Fetch.Response?
         
+        var presentFetchErrorWasCalled = false
+        
         func presentBeachList(_ response: BeachGalleryModel.Fetch.Response) {
             presentBeachListWasCalled = true
             presentBeachListResponse = response
+        }
+        
+        func presentFetchError() {
+            presentFetchErrorWasCalled = true
         }
     }
     
@@ -81,5 +87,23 @@ class BeachGalleryInteractorTests: XCTestCase {
         XCTAssertEqual(response?.beachList[0].image, UIImage(named: "red.png", in: testBundle, compatibleWith: nil)!)
         XCTAssertEqual(response?.beachList[1].image, UIImage(named: "green.png", in: testBundle, compatibleWith: nil)!)
         XCTAssertEqual(response?.beachList[2].image, UIImage(named: "blue.png", in: testBundle, compatibleWith: nil)!)
+    }
+    
+    func testCallingFetchBeachList_callsPresentFetchErrorInOutput_whenHavingFailure() {
+        // Given
+        let outputSpy = OutputSpy()
+        sut.output = outputSpy
+        
+        let beachWorkerSpy = BeachWorkerSpy()
+        sut.beachWorker = beachWorkerSpy
+        beachWorkerSpy.successToBeReturned = false
+        
+        // When
+        sut.fetchNextBeachListPage()
+        
+        RunLoop.current.run(mode: RunLoop.Mode.default, before: Date(timeIntervalSinceNow: 1)) // Wait a little
+        
+        // Then
+        XCTAssertTrue(outputSpy.presentFetchErrorWasCalled)
     }
 }

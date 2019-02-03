@@ -11,6 +11,7 @@ protocol BeachGalleryInteractorIn {
 
 protocol BeachGalleryInteractorOut {
     func presentBeachList(_ response: BeachGalleryModel.Fetch.Response)
+    func presentFetchError()
 }
 
 class BeachGalleryInteractor {
@@ -36,6 +37,9 @@ class BeachGalleryInteractor {
             })
         }
         else {
+            DispatchQueue.main.async {
+                self.output?.presentFetchError()
+            }
         }
     }
     
@@ -68,7 +72,7 @@ class BeachGalleryInteractor {
     }
 }
 
-// MARK: - WeatherInteractorIn
+// MARK: - BeachGalleryInteractorIn
 extension BeachGalleryInteractor: BeachGalleryInteractorIn {
     func fetchNextBeachListPage() {
         if !isLoadingBeachList {

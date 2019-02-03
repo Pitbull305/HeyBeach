@@ -89,4 +89,16 @@ class BeachGalleryViewControllerTests: XCTestCase {
         XCTAssertTrue(outputSpy.fetchNextBeachListPageWasCalled)
         XCTAssertFalse(sut.activityIndicator.isHidden)
     }
+    
+    func testCallingDisplayErrorMessage_displaysCorrectErrorMessage_andHidesActivityIndicator() {
+        // When
+        let viewModel = BeachGalleryModel.Fetch.ViewModel.Failure(message: "My error message")
+        sut.displayErrorMessage(viewModel)
+        
+        // Then
+        XCTAssertTrue(sut.presentedViewController is UIAlertController)
+        XCTAssertEqual((sut.presentedViewController as! UIAlertController).message, "My error message")
+        
+        XCTAssertTrue(sut.activityIndicator.isHidden)
+    }
 }
