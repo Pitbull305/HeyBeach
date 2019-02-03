@@ -8,10 +8,13 @@ import UIKit
 protocol AuthenticationViewControllerIn {
     func handleSignUpSuccess()
     func displaySignUpErrorMessage(_ viewModel: AuthenticationModel.SignUp.ViewModel.Failure)
+    func handleSignInSuccess()
+    func displaySignInErrorMessage(_ viewModel: AuthenticationModel.SignIn.ViewModel.Failure)
 }
 
 protocol AuthenticationViewControllerOut {
     func signUp(_ request: AuthenticationModel.SignUp.Request)
+    func signIn(_ request: AuthenticationModel.SignIn.Request)
 }
 
 class AuthenticationViewController: UIViewController {
@@ -41,6 +44,10 @@ class AuthenticationViewController: UIViewController {
     }
     
     @IBAction func button_signIn_touchUpInside(_ sender: Any) {
+        guard let email = textField_email.text, email != "", let password = textField_password.text, password != "" else { return }
+        activityIndicator.isHidden = false
+        let request = AuthenticationModel.SignIn.Request(email: email, password: password)
+        output?.signIn(request)
     }
     
     @IBAction func button_signUp_touchUpInside(_ sender: Any) {
@@ -59,6 +66,20 @@ extension AuthenticationViewController: AuthenticationViewControllerIn {
     }
     
     func displaySignUpErrorMessage(_ viewModel: AuthenticationModel.SignUp.ViewModel.Failure) {
+        activityIndicator.isHidden = true
+        let alertController = UIAlertController(title: "", message: viewModel.message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) in
+        }
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func handleSignInSuccess() {
+        activityIndicator.isHidden = true
+        performSegue(withIdentifier: "Authentication-TabBar-Segue", sender: self)
+    }
+    
+    func displaySignInErrorMessage(_ viewModel: AuthenticationModel.SignIn.ViewModel.Failure) {
         activityIndicator.isHidden = true
         let alertController = UIAlertController(title: "", message: viewModel.message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) in
