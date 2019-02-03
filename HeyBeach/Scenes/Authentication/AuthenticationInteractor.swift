@@ -11,6 +11,7 @@ protocol AuthenticationInteractorIn {
 
 protocol AuthenticationInteractorOut {
     func presentSignUpSuccess()
+    func presentSignUpFailure()
 }
 
 class AuthenticationInteractor {
@@ -28,6 +29,7 @@ class AuthenticationInteractor {
                 self.output?.presentSignUpSuccess()
             }
             else {
+                self.output?.presentSignUpFailure()
             }
         }
     }

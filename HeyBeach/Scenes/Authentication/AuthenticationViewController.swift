@@ -7,6 +7,7 @@ import UIKit
 
 protocol AuthenticationViewControllerIn {
     func handleSignUpSuccess()
+    func displaySignUpErrorMessage(_ viewModel: AuthenticationModel.SignUp.ViewModel.Failure)
 }
 
 protocol AuthenticationViewControllerOut {
@@ -55,5 +56,14 @@ extension AuthenticationViewController: AuthenticationViewControllerIn {
     func handleSignUpSuccess() {
         activityIndicator.isHidden = true
         performSegue(withIdentifier: "Authentication-TabBar-Segue", sender: self)
+    }
+    
+    func displaySignUpErrorMessage(_ viewModel: AuthenticationModel.SignUp.ViewModel.Failure) {
+        activityIndicator.isHidden = true
+        let alertController = UIAlertController(title: "", message: viewModel.message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) in
+        }
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
     }
 }
