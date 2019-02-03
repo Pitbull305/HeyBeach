@@ -25,22 +25,22 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="580-JD-EaZ">
-                                <rect key="frame" x="48" y="233.5" width="279" height="172"/>
+                                <rect key="frame" x="62.5" y="233.5" width="250" height="172"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qzD-ZC-5oR">
-                                        <rect key="frame" x="16" y="48" width="247" height="30"/>
+                                        <rect key="frame" x="16" y="48" width="218" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress" keyboardAppearance="alert"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vbU-En-tUW">
-                                        <rect key="frame" x="16" y="94" width="247" height="30"/>
+                                        <rect key="frame" x="16" y="94" width="218" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardAppearance="alert" secureTextEntry="YES"/>
                                     </textField>
                                     <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="9tx-OI-8br">
-                                        <rect key="frame" x="129.5" y="136" width="20" height="20"/>
+                                        <rect key="frame" x="115" y="136" width="20" height="20"/>
                                         <color key="color" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </activityIndicatorView>
                                 </subviews>
@@ -106,14 +106,13 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="580-JD-EaZ" firstAttribute="centerX" secondItem="06b-mh-hn3" secondAttribute="centerX" id="0KO-Mc-96y"/>
-                            <constraint firstItem="580-JD-EaZ" firstAttribute="leading" secondItem="06b-mh-hn3" secondAttribute="leading" constant="48" id="2C9-hb-EUq"/>
                             <constraint firstItem="hh6-5y-KDg" firstAttribute="centerX" secondItem="06b-mh-hn3" secondAttribute="centerX" id="5Yu-rG-SfH"/>
                             <constraint firstItem="pJt-ce-0Nw" firstAttribute="top" secondItem="Lvx-TV-y3y" secondAttribute="bottom" constant="8" id="Dqy-Ro-PIN"/>
                             <constraint firstItem="hh6-5y-KDg" firstAttribute="top" secondItem="06b-mh-hn3" secondAttribute="top" constant="16" id="OPm-Qd-jQC"/>
                             <constraint firstItem="pJt-ce-0Nw" firstAttribute="centerX" secondItem="06b-mh-hn3" secondAttribute="centerX" id="Pdh-hv-QYJ"/>
                             <constraint firstItem="Lvx-TV-y3y" firstAttribute="top" secondItem="580-JD-EaZ" secondAttribute="bottom" constant="48" id="VPq-L9-JaX"/>
                             <constraint firstItem="580-JD-EaZ" firstAttribute="centerY" secondItem="06b-mh-hn3" secondAttribute="centerY" constant="-24" id="ge7-4C-rFG"/>
-                            <constraint firstItem="06b-mh-hn3" firstAttribute="trailing" secondItem="580-JD-EaZ" secondAttribute="trailing" constant="48" id="jw6-Ue-lMB"/>
+                            <constraint firstItem="580-JD-EaZ" firstAttribute="width" secondItem="UtS-a3-reT" secondAttribute="width" multiplier="2/3" id="jcT-qK-9YJ"/>
                             <constraint firstItem="Lvx-TV-y3y" firstAttribute="centerX" secondItem="06b-mh-hn3" secondAttribute="centerX" id="p80-p7-Y5d"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="06b-mh-hn3"/>
