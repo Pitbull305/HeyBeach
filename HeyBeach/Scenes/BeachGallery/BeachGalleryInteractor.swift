@@ -76,7 +76,7 @@ class BeachGalleryInteractor {
 extension BeachGalleryInteractor: BeachGalleryInteractorIn {
     func fetchNextBeachListPage() {
         if !isLoadingBeachList {
-            print("Loading next page")
+            //print("Loading next page")
             isLoadingBeachList = true
             currentBeachListPage += 1
             beachWorker?.fetchBeachList(page: currentBeachListPage, completionHandler: {

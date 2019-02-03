@@ -12,7 +12,7 @@ protocol BeachGalleryPresenterIn {
 
 protocol BeachGalleryPresenterOut: class {
     func displayBeachList(_ viewModel: BeachGalleryModel.Fetch.ViewModel.Success)
-    func displayErrorMessage(_ viewModel: BeachGalleryModel.Fetch.ViewModel.Failure)
+    func displayFetchErrorMessage(_ viewModel: BeachGalleryModel.Fetch.ViewModel.Failure)
 }
 
 class BeachGalleryPresenter {
@@ -30,6 +30,6 @@ extension BeachGalleryPresenter: BeachGalleryPresenterIn {
     
     func presentFetchError() {
         let viewModel = BeachGalleryModel.Fetch.ViewModel.Failure(message: "An error has occurred, please try again later.")
-        output?.displayErrorMessage(viewModel)
+        output?.displayFetchErrorMessage(viewModel)
     }
 }

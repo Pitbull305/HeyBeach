@@ -41,7 +41,7 @@ class BeachGalleryPresenterTests: XCTestCase {
             displayBeachListViewModel = viewModel
         }
         
-        func displayErrorMessage(_ viewModel: BeachGalleryModel.Fetch.ViewModel.Failure) {
+        func displayFetchErrorMessage(_ viewModel: BeachGalleryModel.Fetch.ViewModel.Failure) {
             displayErrorMessageWasCalled = true
             displayErrorMessageViewModel = viewModel
         }

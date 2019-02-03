@@ -27,7 +27,7 @@ class AuthenticationInteractor {
     private func handleSignUpResponse(_ token: String?) {
         DispatchQueue.main.async {
             if let token = token {
-                UserDefaultsManager.storeToken(token)
+                UserDefaultsManager.storeUserToken(token)
                 self.output?.presentSignUpSuccess()
             }
             else {
@@ -39,7 +39,7 @@ class AuthenticationInteractor {
     private func handleSignInResponse(_ token: String?) {
         DispatchQueue.main.async {
             if let token = token {
-                UserDefaultsManager.storeToken(token)
+                UserDefaultsManager.storeUserToken(token)
                 self.output?.presentSignInSuccess()
             }
             else {

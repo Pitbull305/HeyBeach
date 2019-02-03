@@ -93,7 +93,7 @@ class BeachGalleryViewControllerTests: XCTestCase {
     func testCallingDisplayErrorMessage_displaysCorrectErrorMessage_andHidesActivityIndicator() {
         // When
         let viewModel = BeachGalleryModel.Fetch.ViewModel.Failure(message: "My error message")
-        sut.displayErrorMessage(viewModel)
+        sut.displayFetchErrorMessage(viewModel)
         
         // Then
         XCTAssertTrue(sut.presentedViewController is UIAlertController)
