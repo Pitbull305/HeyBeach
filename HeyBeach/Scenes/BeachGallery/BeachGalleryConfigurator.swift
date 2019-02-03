@@ -3,7 +3,7 @@
 //  HeyBeach
 //
 
-import UIKit
+import Foundation
 
 extension BeachGalleryViewController: BeachGalleryPresenterOut {
 }

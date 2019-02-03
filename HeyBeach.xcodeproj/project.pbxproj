@@ -28,6 +28,11 @@
 		509957082205934D00A01DA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 509957072205934D00A01DA5 /* Assets.xcassets */; };
 		5099570B2205934D00A01DA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 509957092205934D00A01DA5 /* LaunchScreen.storyboard */; };
 		509957212205934D00A01DA5 /* HeyBeachUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509957202205934D00A01DA5 /* HeyBeachUITests.swift */; };
+		50C64B6B2206E506005B711E /* AuthenticationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C64B6A2206E506005B711E /* AuthenticationInteractor.swift */; };
+		50C64B6D2206E529005B711E /* AuthenticationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C64B6C2206E529005B711E /* AuthenticationPresenter.swift */; };
+		50C64B6F2206F464005B711E /* UserWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C64B6E2206F464005B711E /* UserWorker.swift */; };
+		50C64B752206FEB4005B711E /* AuthenticationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C64B742206FEB4005B711E /* AuthenticationModel.swift */; };
+		50C64B7722070310005B711E /* AuthenticationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C64B7622070310005B711E /* AuthenticationConfigurator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +80,11 @@
 		5099571C2205934D00A01DA5 /* HeyBeachUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeyBeachUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		509957202205934D00A01DA5 /* HeyBeachUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeyBeachUITests.swift; sourceTree = "<group>"; };
 		509957222205934D00A01DA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50C64B6A2206E506005B711E /* AuthenticationInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationInteractor.swift; sourceTree = "<group>"; };
+		50C64B6C2206E529005B711E /* AuthenticationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationPresenter.swift; sourceTree = "<group>"; };
+		50C64B6E2206F464005B711E /* UserWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserWorker.swift; sourceTree = "<group>"; };
+		50C64B742206FEB4005B711E /* AuthenticationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationModel.swift; sourceTree = "<group>"; };
+		50C64B7622070310005B711E /* AuthenticationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationConfigurator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +115,11 @@
 		5060F8A022064C4100FA10A5 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				50C64B7622070310005B711E /* AuthenticationConfigurator.swift */,
+				50C64B742206FEB4005B711E /* AuthenticationModel.swift */,
 				5060F8A122064C7100FA10A5 /* AuthenticationViewController.swift */,
+				50C64B6A2206E506005B711E /* AuthenticationInteractor.swift */,
+				50C64B6C2206E529005B711E /* AuthenticationPresenter.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -125,8 +139,9 @@
 		5082F5862205AD2E00933D67 /* Worker */ = {
 			isa = PBXGroup;
 			children = (
+				50C64B6E2206F464005B711E /* UserWorker.swift */,
 				5082F59E2205CD5D00933D67 /* BeachWorker.swift */,
-				5082F5A02205CDEE00933D67 /* ApiModels */,
+				5082F5A02205CDEE00933D67 /* RawModels */,
 			);
 			path = Worker;
 			sourceTree = "<group>";
@@ -176,12 +191,12 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
-		5082F5A02205CDEE00933D67 /* ApiModels */ = {
+		5082F5A02205CDEE00933D67 /* RawModels */ = {
 			isa = PBXGroup;
 			children = (
 				5082F5A12205CE4500933D67 /* RawBeach.swift */,
 			);
-			path = ApiModels;
+			path = RawModels;
 			sourceTree = "<group>";
 		};
 		509956F42205934B00A01DA5 = {
@@ -411,11 +426,16 @@
 				5082F5A62205DF2500933D67 /* BeachGalleryPresenter.swift in Sources */,
 				5060F8A222064C7100FA10A5 /* AuthenticationViewController.swift in Sources */,
 				509957012205934C00A01DA5 /* AppDelegate.swift in Sources */,
+				50C64B6F2206F464005B711E /* UserWorker.swift in Sources */,
+				50C64B752206FEB4005B711E /* AuthenticationModel.swift in Sources */,
 				5082F5AA2205F37E00933D67 /* BeachGalleryConfigurator.swift in Sources */,
+				50C64B6B2206E506005B711E /* AuthenticationInteractor.swift in Sources */,
 				5082F58D2205B91F00933D67 /* BeachCell.swift in Sources */,
 				5082F59F2205CD5D00933D67 /* BeachWorker.swift in Sources */,
+				50C64B6D2206E529005B711E /* AuthenticationPresenter.swift in Sources */,
 				5082F5852205ACF200933D67 /* BeachGalleryViewController.swift in Sources */,
 				5082F58A2205AD9F00933D67 /* BeachGalleryModel.swift in Sources */,
+				50C64B7722070310005B711E /* AuthenticationConfigurator.swift in Sources */,
 				5082F5A22205CE4500933D67 /* RawBeach.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

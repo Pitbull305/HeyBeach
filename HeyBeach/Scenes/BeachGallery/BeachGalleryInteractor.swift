@@ -26,10 +26,10 @@ class BeachGalleryInteractor {
     private var oldBeachList = [BeachGalleryModel.Beach]()
     
     // MARK: - Methods
-    private func handleFetchBeachListResponse(_ rawBeachList: [RawBeach], _ success: Bool) {
+    private func handleFetchNextBeachListPageResponse(_ rawBeachList: [RawBeach], _ success: Bool) {
         if success {
             totalBeachListCount = rawBeachList.count
-            createFetchResponse(rawBeachList, completionHandler: {
+            createPresenterResponse(rawBeachList, completionHandler: {
                 (response: BeachGalleryModel.Fetch.Response) in
                 self.isLoadingBeachList = false
                 self.output?.presentBeachList(response)
@@ -39,7 +39,7 @@ class BeachGalleryInteractor {
         }
     }
     
-    private func createFetchResponse(_ rawBeachList: [RawBeach], completionHandler: @escaping(_ response: BeachGalleryModel.Fetch.Response) -> Void) {
+    private func createPresenterResponse(_ rawBeachList: [RawBeach], completionHandler: @escaping(_ response: BeachGalleryModel.Fetch.Response) -> Void) {
         let dispatchGroup = DispatchGroup()
         var newBeachList = [BeachGalleryModel.Beach]()
         
@@ -77,7 +77,7 @@ extension BeachGalleryInteractor: BeachGalleryInteractorIn {
             currentBeachListPage += 1
             beachWorker?.fetchBeachList(page: currentBeachListPage, completionHandler: {
                 (rawBeachList: [RawBeach], success: Bool) in
-                self.handleFetchBeachListResponse(rawBeachList, success)
+                self.handleFetchNextBeachListPageResponse(rawBeachList, success)
             })
         }
     }
