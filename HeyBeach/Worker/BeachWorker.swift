@@ -21,6 +21,7 @@ class BeachWorker {
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.cachePolicy = .reloadIgnoringLocalCacheData
+        request.setValue("no-cache", forHTTPHeaderField: "Cache-Control")
         
         URLSession.shared.dataTask(with: request, completionHandler: {
             (data, response, error) in

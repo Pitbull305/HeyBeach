@@ -39,6 +39,10 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardAppearance="alert" secureTextEntry="YES"/>
                                     </textField>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="9tx-OI-8br">
+                                        <rect key="frame" x="129.5" y="136" width="20" height="20"/>
+                                        <color key="color" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -48,6 +52,8 @@
                                     <constraint firstItem="qzD-ZC-5oR" firstAttribute="leading" secondItem="580-JD-EaZ" secondAttribute="leading" constant="16" id="WeP-9w-mVr"/>
                                     <constraint firstAttribute="trailing" secondItem="qzD-ZC-5oR" secondAttribute="trailing" constant="16" id="b1l-ho-tFS"/>
                                     <constraint firstAttribute="trailing" secondItem="vbU-En-tUW" secondAttribute="trailing" constant="16" id="jgH-Nf-tZ3"/>
+                                    <constraint firstItem="9tx-OI-8br" firstAttribute="centerX" secondItem="580-JD-EaZ" secondAttribute="centerX" id="nU8-1S-mTC"/>
+                                    <constraint firstAttribute="bottom" secondItem="9tx-OI-8br" secondAttribute="bottom" constant="16" id="zJE-rU-5RA"/>
                                     <constraint firstItem="vbU-En-tUW" firstAttribute="top" secondItem="qzD-ZC-5oR" secondAttribute="bottom" constant="16" id="zyl-Gm-JVc"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -71,6 +77,9 @@
                                         <integer key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="button_signIn_touchUpInside:" destination="pq6-eB-r03" eventType="touchUpInside" id="tjC-kd-dT5"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pJt-ce-0Nw">
                                 <rect key="frame" x="139.5" y="495.5" width="96" height="34"/>
@@ -86,6 +95,9 @@
                                         <integer key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="button_signUp_touchUpInside:" destination="pq6-eB-r03" eventType="touchUpInside" id="Knh-V7-GfJ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -108,7 +120,10 @@
                         </connections>
                     </view>
                     <connections>
-                        <segue destination="3Tp-j5-NS1" kind="show" id="Onk-J0-qu9"/>
+                        <outlet property="activityIndicator" destination="9tx-OI-8br" id="eca-Bs-Jv8"/>
+                        <outlet property="textField_email" destination="qzD-ZC-5oR" id="4pT-P1-Wrl"/>
+                        <outlet property="textField_password" destination="vbU-En-tUW" id="0St-G8-ROQ"/>
+                        <segue destination="3Tp-j5-NS1" kind="show" identifier="Authentication-TabBar-Segue" id="Onk-J0-qu9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kA5-sX-lpr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -162,7 +177,7 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Tir-Yr-qdI"/>
                                 </connections>
                             </collectionView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="p6E-zX-MNl">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="p6E-zX-MNl">
                                 <rect key="frame" x="169" y="300.5" width="37" height="37"/>
                                 <color key="color" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
