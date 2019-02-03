@@ -54,7 +54,7 @@ class BeachGalleryInteractorTests: XCTestCase {
             completionHandler(rawBeachListToBeReturned, successToBeReturned)
         }
         
-        override func fetchBeachImage(name: String, completionHandler: @escaping (UIImage?) -> Void) {
+        override func fetchBeachImage(id: String, name: String, completionHandler: @escaping (UIImage?) -> Void) {
             let image = UIImage(named: name, in: self.testBundle, compatibleWith: nil)!
             completionHandler(image)
         }
