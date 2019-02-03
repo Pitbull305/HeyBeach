@@ -64,4 +64,28 @@ class UserWorker {
             }
         }).resume()
     }
+    
+    func logout(token: String, completionHandler: @escaping(_ success: Bool) -> Void) {
+        let urlString = "\(endpoint)/user/login"
+        guard let url = URL(string: urlString) else {
+            completionHandler(false)
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "DELETE"
+        request.cachePolicy = .reloadIgnoringLocalCacheData
+        request.setValue("no-cache", forHTTPHeaderField: "Cache-Control")
+        request.setValue(token, forHTTPHeaderField: "x-auth")
+        
+        URLSession.shared.dataTask(with: request, completionHandler: {
+            (data, response, error) in
+            if error == nil {
+                completionHandler(true)
+            }
+            else {
+                completionHandler(false)
+            }
+        }).resume()
+    }
 }
