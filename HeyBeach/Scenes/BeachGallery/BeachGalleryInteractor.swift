@@ -22,7 +22,7 @@ class BeachGalleryInteractor {
     
     // Infinite scrolling
     private var isLoadingBeachList = false
-    private var currentBeachListPage = 0
+    private var nextBeachListPage = 0
     private var oldBeachList = [BeachGalleryModel.Beach]()
     
     // MARK: - Methods
@@ -76,8 +76,8 @@ extension BeachGalleryInteractor: BeachGalleryInteractorIn {
         if !isLoadingBeachList {
             //print("Loading next page")
             isLoadingBeachList = true
-            currentBeachListPage += 1
-            beachWorker?.fetchBeachList(page: currentBeachListPage, completionHandler: {
+            nextBeachListPage += 1
+            beachWorker?.fetchBeachList(page: nextBeachListPage, completionHandler: {
                 (rawBeachList: [RawBeach], success: Bool) in
                 self.handleFetchNextBeachListPageResponse(rawBeachList, success)
             })
